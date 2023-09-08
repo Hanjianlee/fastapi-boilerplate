@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "fastapi-boilerplate"
+version = "0.1.0"
+description = "FastAPI Boilerplate"
+authors = ["hanjianlee <hanjianlee7@gmail.com>"]
+readme = "README.md"
+packages = [{include =  "src"}]
+
+[tool.poetry.scripts]
+start = "src.main:start"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlalchemy = "^2.0.20"
+black = "^23.7.0"
+fastapi = "^0.103.0"
+pydantic = "^2.3.0"
+flake8 = "^6.1.0"
+pylint = "^2.17.5"
+uvicorn = "^0.23.2"
+
+[tool.black]
+line-length=70
+target-version = ['py37']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
