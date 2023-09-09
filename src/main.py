@@ -11,12 +11,16 @@ app.include_router(create_app_router())
 
 
 def start():
-    reload = False
-    if ENV == "development":
-        reload = True
+    reload = (
+        True  # Should default to false after env config is set up
+    )
+    host = "localhost"
+    # if ENV == "development":
+    #     reload = True
+    #     host = ENV.SERVER_HOST
     uvicorn.run(
         "main:app",
-        # host="0:0:0:0",
+        host=host,
         reload=reload,
         port=8000,
         reload_dirs=["src"],
