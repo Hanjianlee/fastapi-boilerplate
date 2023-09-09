@@ -35,6 +35,7 @@ exclude = '''
     | \.mypy_cache
     | \.tox
     | \.venv
+    | \.__pycache__
     | _build
     | buck-out
     | build
