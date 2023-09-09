@@ -20,6 +20,7 @@ pylint = "^2.17.5"
 uvicorn = "^0.23.2"
 asyncmy = "^0.2.8"
 celery = "^5.3.4"
+flower = "^2.0.1"
 
 [tool.black]
 line-length=70
