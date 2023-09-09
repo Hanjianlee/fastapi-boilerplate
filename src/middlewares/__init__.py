@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 def initialise_middlewares(app: FastAPI) -> None:
-    app.middleware("http")(authenticate)
+    # app.middleware("http")(authenticate)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
